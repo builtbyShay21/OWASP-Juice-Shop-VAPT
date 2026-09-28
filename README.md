@@ -10,6 +10,7 @@ This repository documents an authorized, controlled Vulnerability Assessment and
 This project is a portfolio reconstruction of academic VAPT work. It details a structured assessment spanning network reconnaissance, automated vulnerability scanning, manual traffic inspection, and the controlled validation of an identified SQL Injection vulnerability. 
 
 ![Juice Shop Interface](evidence/01-environment/01-juice-shop-interface.png)
+
 *Figure 1: OWASP Juice Shop application running within the isolated Docker lab environment.*
 
 ## 2. Assessment Objectives
@@ -44,24 +45,29 @@ flowchart TD
 Reconnaissance successfully mapped the attack surface, identifying the active web service and associated components. Automated assessment tools reported multiple configuration weaknesses and application-layer vulnerabilities.
 
 ![Nmap Reconnaissance](evidence/02-nmap/02-nmap-enumeration.png)
+
 *Figure 2: Nmap service enumeration identifying the application listening on port 3000.*
 
 ![OpenVAS Findings](evidence/04-openvas/04-openvas-findings.png)
+
 *Figure 3: OpenVAS dashboard summarizing the automated vulnerability scan tasks and observations.*
 
 ## 6. SQL Injection Case Study
 Following the automated assessment, manual testing isolated a vulnerable authentication endpoint. By intercepting the HTTP request, the vulnerability was passed to automated validation tools to confirm the exploitability of the backend database.
 
 ![Burp Suite Intercept](evidence/05-burp-suite/06-burp-login-request.png)
+
 *Figure 4: Burp Suite intercepting the targeted HTTP POST request for controlled validation.*
 
 ![SQLmap Detection](evidence/06-sqlmap/07-sqlmap-injection-detection.png)
+
 *Figure 5: SQLmap successfully identifying blind SQL injection vulnerabilities within the targeted request parameter.*
 
 ## 7. Security Impact
 The validated vulnerability demonstrated severe security consequences, notably the compromise of application confidentiality through unauthorized database enumeration.
 
 ![Data Exposure Impact](evidence/07-impact/10-data-exposure-impact.png)
+
 *Figure 6: Demonstration of database exposure (sensitive values have been intentionally redacted for public publication).*
 
 ## 8. Remediation
