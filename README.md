@@ -53,7 +53,7 @@ Reconnaissance successfully mapped the attack surface, identifying the active we
 *Figure 3: OpenVAS dashboard summarizing the automated vulnerability scan tasks and observations.*
 
 ## 6. SQL Injection Case Study
-Following the automated assessment, manual testing isolated a vulnerable authentication endpoint. By intercepting the HTTP request, the vulnerability was passed to automated validation tools to confirm the exploitability of the backend database.
+Following the automated assessment, manual request inspection identified the authentication request used for controlled SQL injection validation. The intercepted HTTP request was then used as the basis for further validation with SQLmap.
 
 ![Burp Suite Intercept](evidence/05-burp-suite/06-burp-login-request.png)
 
